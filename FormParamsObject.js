@@ -28,7 +28,7 @@ FormParamsObject.prototype.convertObjectToArray = function (propPath) {
         part = {}
 
         keys.forEach(function (key) {
-            if (typeof source[key][index] !== 'undefined') {
+            if (Array.isArray(source[key]) && typeof source[key][index] !== 'undefined') {
                 part[key] = source[key][index];
             }
         })
